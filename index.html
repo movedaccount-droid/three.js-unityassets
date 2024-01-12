@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<head>
+<script type="importmap">
+	{
+		"imports": {
+			"fbxloader": "./FBXLoader.js",
+			"three": "./three.module.js"
+		}
+	}
+</script>
+
+<script type="module">
+	import * as THREE from 'three';
+	import {FBXLoader} from 'fbxloader';
+
+	function main() {
+		// intiating canvas/camera
+		const canvas = document.querySelector('#c');
+		const renderer = new THREE.WebGLRenderer({antialias: true, canvas});
+		const fov = 75;
+		const aspect = 2;
+		const near = 0.000001;
+		const far = 100000;
+		const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+		camera.position.z = 2;
+
+        // init scene
+		const scene = new THREE.Scene();
+
+        // init boxes
+		const boxWidth = 1;
+		const boxHeight = 1;
+		const boxDepth = 1;
+		const geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
+
+		function makeInstance(geometry, color, x) {
+			const material = new THREE.MeshPhongMaterial({color});
+			const cube = new THREE.Mesh(geometry, material);
+			scene.add(cube);
+			cube.position.x = x;
+			return cube;
+		}
+
+		const cubes = [
+			makeInstance(geometry, 0x99aa88, 0),
+			makeInstance(geometry, 0xaa8899, -2),
+			makeInstance(geometry, 0xaa9988, 2),
+		];
+
+        // init light
+        const color = "#ffffff"
+		const intensity = 3;
+		const light = new THREE.DirectionalLight(color, intensity);
+		light.position.set(-1, 2, 4);
+		scene.add(light);
+
+        // init custom model
+		const fbxloader = new FBXLoader();
+		fbxloader.load('cat.fbx',
+		(object) => {
+			scene.add(object)
+            // log model details
+            const box = new THREE.Box3().setFromObject(object)
+            const boxSize = box.getSize(new THREE.Vector3()).length();
+            const boxCenter = box.getCenter(new THREE.Vector3());
+            console.log(boxSize);
+            console.log(boxCenter);
+
+            // adjust camera to fit model
+            function frameArea(sizeToFitOnScreen, boxSize, boxCenter, camera) {
+                const halfSizeToFitOnScreen = sizeToFitOnScreen/2;
+                const halfFovY = THREE.MathUtils.degToRad(camera.fov/2);
+                const distance = halfSizeToFitOnScreen/Math.tan(halfFovY);
+
+                const direction = (new THREE.Vector3()).subVectors(camera.position, boxCenter).normalize();
+                camera.position.copy(direction.multiplyScalar(distance).add(boxCenter));
+                camera.updateProjectionMatrix();
+                camera.lookAt(boxCenter.x, boxCenter.y, boxCenter.z)
+            }
+
+            frameArea(boxSize * 1.2, boxSize, boxCenter, camera)
+            
+		},
+		(xhr) => {
+			console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
+		},
+		(error) => {
+			console.log(error)
+		}
+		)
+
+        // render first frame
+		renderer.render(scene, camera);
+
+        // animate
+		function render(time) {
+			time *= 0.001;
+
+			cubes.forEach((cube, ndx) => {
+				const speed = 1 + ndx * .1;
+				const rot = time * speed;
+				cube.rotation.x = rot;
+				cube.rotation.y = rot;
+			});
+			renderer.render(scene, camera);
+			requestAnimationFrame(render);
+		}
+		requestAnimationFrame(render);
+	}
+
+    // call function to init loop
+	main()
+</script>
+</head>
+<body>
+	<canvas id="c"></canvas>
+</body>
+

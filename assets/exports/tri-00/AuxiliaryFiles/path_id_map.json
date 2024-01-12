@@ -1,0 +1,98 @@
+{
+  "Files": [
+    {
+      "Name": "cab-608d14b9cfec0a369fabfd39678bab2f",
+      "Assets": [
+        {
+          "PathID": 3953363544854007373,
+          "Name": "tri-y-1-z-2",
+          "Type": "Mesh"
+        }
+      ]
+    },
+    {
+      "Name": "cab-7f026624b28c65c20f5ca61c3c070424",
+      "Assets": [
+        {
+          "PathID": 489889316993774574,
+          "Name": "tri-x-1",
+          "Type": "Mesh"
+        }
+      ]
+    },
+    {
+      "Name": "cab-cc16ee3c8d78e84f98c38729e5f9a81b",
+      "Assets": [
+        {
+          "PathID": 8819860866890694261,
+          "Name": "tri-z-1",
+          "Type": "Mesh"
+        }
+      ]
+    },
+    {
+      "Name": "cab-12810e3a71231c275a95a047ceb1c2cd",
+      "Assets": [
+        {
+          "PathID": -4966698530323725285,
+          "Name": "Cube",
+          "Type": "Mesh"
+        }
+      ]
+    },
+    {
+      "Name": "cab-a1e31f31856813b7384f999fbbf5e9b0",
+      "Assets": []
+    },
+    {
+      "Name": "cab-d8558128c02c129a431816a7a425eca9",
+      "Assets": [
+        {
+          "PathID": -4213872582303394394,
+          "Name": "Cube",
+          "Type": "Mesh"
+        }
+      ]
+    },
+    {
+      "Name": "cab-74e60b3e8af330b59b20714a38d0adaf",
+      "Assets": [
+        {
+          "PathID": -9152040668756182724,
+          "Name": "tri-z-2",
+          "Type": "Mesh"
+        }
+      ]
+    },
+    {
+      "Name": "cab-3717d08f1b49d09d818a9412f669a0d9",
+      "Assets": [
+        {
+          "PathID": 851733478781388842,
+          "Name": "tri-y-1",
+          "Type": "Mesh"
+        }
+      ]
+    },
+    {
+      "Name": "cab-401c28469e5fda4072c6975971eedc31",
+      "Assets": [
+        {
+          "PathID": -549645302834671639,
+          "Name": "tri-y-1-z-2-normaledited",
+          "Type": "Mesh"
+        }
+      ]
+    },
+    {
+      "Name": "cab-e4b385962514dccc883ce26b6e027644",
+      "Assets": [
+        {
+          "PathID": 861528630929669261,
+          "Name": "tri-00",
+          "Type": "Mesh"
+        }
+      ]
+    }
+  ]
+}
