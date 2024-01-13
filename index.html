@@ -4,7 +4,8 @@
 	{
 		"imports": {
 			"fbxloader": "./FBXLoader.js",
-			"three": "./three.module.js"
+			"three": "./three.module.js",
+            "yamlloader": "./UnityYAMLLoader.js"
 		}
 	}
 </script>
@@ -12,8 +13,27 @@
 <script type="module">
 	import * as THREE from 'three';
 	import {FBXLoader} from 'fbxloader';
+    import {UnityYAMLLoader} from 'yamlloader';
 
 	function main() {
+
+        // --- YAML LOADER LOGIC ---
+        const yamlcanvas = document.querySelector('#y');
+        const yamlrender = new THREE.WebGLRenderer({antialias: true, yamlcanvas});
+
+        const yamlfov = 75;
+		const yamlaspect = 2;
+		const yamlnear = 0.000001;
+		const yamlfar = 100000;
+		const yamlcamera = new THREE.PerspectiveCamera(yamlfov, yamlaspect, yamlnear, yamlfar);
+		yamlcamera.position.z = 2;
+
+        const yamlscene = new THREE.Scene();
+
+        const yamlloader = new UnityYAMLLoader();
+        yamlloader.load('cat.asset', (onload) => {console.log(onload)}, (onprogress) => {console.log(onprogress)}, (onerror) => {console.log(onerror)})
+
+        // --- FBX LOADER LOGIC ---
 		// intiating canvas/camera
 		const canvas = document.querySelector('#c');
 		const renderer = new THREE.WebGLRenderer({antialias: true, canvas});
@@ -63,8 +83,8 @@
             const box = new THREE.Box3().setFromObject(object)
             const boxSize = box.getSize(new THREE.Vector3()).length();
             const boxCenter = box.getCenter(new THREE.Vector3());
-            console.log(boxSize);
-            console.log(boxCenter);
+            //console.log(boxSize);
+            //console.log(boxCenter);
 
             // adjust camera to fit model
             function frameArea(sizeToFitOnScreen, boxSize, boxCenter, camera) {
@@ -82,10 +102,10 @@
             
 		},
 		(xhr) => {
-			console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
+			//console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
 		},
 		(error) => {
-			console.log(error)
+			//console.log(error)
 		}
 		)
 
@@ -113,6 +133,9 @@
 </script>
 </head>
 <body>
+    <h1>fbx loadfrear canvas</h1>
 	<canvas id="c"></canvas>
+    <h1>yaml loadfrear canvas</h1>
+	<canvas id="y"></canvas>
 </body>
 
