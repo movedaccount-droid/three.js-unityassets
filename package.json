@@ -1,0 +1,17 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "FBXLoader.js",
+  "scripts": {
+    "dev": "vite --force",
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "vite": "^5.0.11"
+  }
+}

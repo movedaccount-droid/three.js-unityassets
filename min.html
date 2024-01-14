@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<head>
+
+<script type="module">
+	import * as THREE from 'three';
+    import {UnityYAMLLoader} from 'three/addons/loaders/UnityYAMLLoader.js';
+    import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+	function main() {
+
+        // --- YAML LOADER LOGIC ---
+        const canvas = document.querySelector('#y');
+        const render = new THREE.WebGLRenderer({antialias: true, canvas});
+
+        const fov = 75;
+		const aspect = 2;
+		const near = 0.000001;
+		const far = 100000;
+		const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+		camera.position.z = 2;
+
+        const scene = new THREE.Scene();
+        var asset
+
+        function onLoad(asset) {
+            scene.add(asset)
+            const box = new THREE.Box3().setFromObject(asset)
+            const objSize = box.getSize(new THREE.Vector3()).length();
+            const objCenter = box.getCenter(new THREE.Vector3());
+            console.log(objSize);
+            console.log(objCenter);
+
+            // adjust camera to fit model
+            function frameArea(sizeToFitOnScreen, objSize, objCenter, camera) {
+                const halfSizeToFitOnScreen = sizeToFitOnScreen/2;
+                const halfFovY = THREE.MathUtils.degToRad(camera.fov/2);
+                const distance = halfSizeToFitOnScreen/Math.tan(halfFovY);
+
+                const direction = (new THREE.Vector3()).subVectors(camera.position, objCenter).normalize();
+                camera.position.copy(direction.multiplyScalar(distance).add(objCenter));
+                camera.updateProjectionMatrix();
+                camera.lookAt(objCenter.x, objCenter.y, objCenter.z)
+                const controls = new OrbitControls(camera, render.domElement);
+
+                function animate(controls) {
+                
+                    requestAnimationFrame(animate);
+                    render.render(scene, camera);
+
+                }
+
+                animate(controls)
+            }
+
+            frameArea(objSize * 1.2, objSize, objCenter, camera)
+            camera.updateProjectionMatrix();
+
+            render.render(scene, camera);
+        }
+
+        const loader = new UnityYAMLLoader();
+        loader.load('cat2.asset', (onload) => onLoad(onload), (onprogress) => {console.log(onprogress)}, (onerror) => {console.log(onerror)})
+
+	}
+
+    // call function to init loop
+	main()
+</script>
+</head>
+<body>
+    <h1>yaml loadfrear canvas</h1>
+	<canvas id="y"></canvas>
+</body>
+

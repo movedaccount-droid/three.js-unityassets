@@ -1,19 +1,12 @@
 <!DOCTYPE HTML>
 <head>
-<script type="importmap">
-	{
-		"imports": {
-			"fbxloader": "./FBXLoader.js",
-			"three": "./three.module.js",
-            "yamlloader": "./UnityYAMLLoader.js"
-		}
-	}
-</script>
+
 
 <script type="module">
 	import * as THREE from 'three';
-	import {FBXLoader} from 'fbxloader';
-    import {UnityYAMLLoader} from 'yamlloader';
+	import {FBXLoader} from 'three/addons/loaders/FBXLoader.js';
+    import {UnityYAMLLoader} from 'three/addons/loaders/UnityYAMLLoader.js';
+    import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 	function main() {
 
@@ -31,12 +24,14 @@
         const yamlscene = new THREE.Scene();
 
         const yamlloader = new UnityYAMLLoader();
-        yamlloader.load('cat.asset', (onload) => {console.log(onload)}, (onprogress) => {console.log(onprogress)}, (onerror) => {console.log(onerror)})
+        yamlloader.load('cat.asset', (onload) => {yamlscene.add(onload)}, (onprogress) => {console.log(onprogress)}, (onerror) => {console.log(onerror)})
+        yamlrender.render(yamlscene, yamlcamera);
 
         // --- FBX LOADER LOGIC ---
 		// intiating canvas/camera
 		const canvas = document.querySelector('#c');
 		const renderer = new THREE.WebGLRenderer({antialias: true, canvas});
+
 		const fov = 75;
 		const aspect = 2;
 		const near = 0.000001;
@@ -123,6 +118,7 @@
 				cube.rotation.y = rot;
 			});
 			renderer.render(scene, camera);
+            yamlrender.render(yamlscene, yamlcamera)
 			requestAnimationFrame(render);
 		}
 		requestAnimationFrame(render);
