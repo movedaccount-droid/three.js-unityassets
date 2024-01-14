@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9604369fb25f2064baab5d0690225ff1
+guid: 4a90a8fbb41b8014ebec46bf2d0f548e
 timeCreated: 1705248807
 licenseType: Free
 PrefabImporter:
@@ -8,5 +8,5 @@ PrefabImporter:
   isPrefabVariant: 0
   variantParentGUID: 00000000000000000000000000000000
   userData:
-  assetBundleName: tri-y-1
+  assetBundleName: cube-painted
   assetBundleVariant:

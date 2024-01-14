@@ -45,6 +45,21 @@
       "Assets": []
     },
     {
+      "Name": "cab-736fae8cb1c6dcaaaf56d364fdf14883",
+      "Assets": [
+        {
+          "PathID": -2896712339961954328,
+          "Name": "cube-painted",
+          "Type": "Mesh"
+        },
+        {
+          "PathID": -845745780581621821,
+          "Name": "cube-painted",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
       "Name": "cab-d8558128c02c129a431816a7a425eca9",
       "Assets": [
         {
