@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "js-yaml": "^4.1.0",
+    "three": "file:../three",
     "vite": "^5.0.11"
   }
 }
