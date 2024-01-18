@@ -18,8 +18,13 @@
 		const far = 100000;
 		const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
 		camera.position.z = 2;
-
+		
+	    const color = 0xFFFFFF;
+        const intensity = 1;
+        const light = new THREE.AmbientLight(color, intensity);
+        
         const scene = new THREE.Scene();
+        scene.add(light);
         var asset
 
         function onLoad(asset) {
