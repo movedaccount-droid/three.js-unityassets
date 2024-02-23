@@ -51,11 +51,6 @@
           "PathID": -2896712339961954328,
           "Name": "cube-painted",
           "Type": "Mesh"
-        },
-        {
-          "PathID": -845745780581621821,
-          "Name": "cube-painted",
-          "Type": "Texture2D"
         }
       ]
     },
@@ -96,6 +91,31 @@
           "PathID": -549645302834671639,
           "Name": "tri-y-1-z-2-normaledited",
           "Type": "Mesh"
+        }
+      ]
+    },
+    {
+      "Name": "cab-4fa7671dba6dfe9b672ff3d6dd6b89e5",
+      "Assets": [
+        {
+          "PathID": 461289809021460656,
+          "Name": "Cube.001",
+          "Type": "Mesh"
+        },
+        {
+          "PathID": 3957709701526321632,
+          "Name": "cube_normal_mapped",
+          "Type": "Mesh"
+        },
+        {
+          "PathID": 4000725060690151408,
+          "Name": "Cube.002",
+          "Type": "Mesh"
+        },
+        {
+          "PathID": 7128315043275390043,
+          "Name": "cube-normal-painted",
+          "Type": "Texture2D"
         }
       ]
     },

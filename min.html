@@ -64,7 +64,7 @@
         }
 
         const loader = new UnityYAMLLoader();
-        const assets = [['cat.png','cat.png.meta'],['cat.asset','cat.asset.meta'],['cat.mat','cat.mat.meta']]
+        const assets = [['cat.png','cat.png.meta'],['cat.mat','cat.mat.meta'],['cat.asset','cat.asset.meta']]
         loader.load(assets, (onload) => onLoad(onload), (onprogress) => {console.log(onprogress)}, (onerror) => {console.log(onerror)})
 
 	}

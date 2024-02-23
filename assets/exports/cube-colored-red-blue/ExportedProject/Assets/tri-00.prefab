@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1982769254105663
+--- !u!1 &1398829328404361
 GameObject:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Component:
-  - component: {fileID: 4791103686825874}
-  - component: {fileID: 33118937587827829}
-  - component: {fileID: 23375517515494349}
+  - component: {fileID: 4797101760591473}
+  - component: {fileID: 33242661050362540}
+  - component: {fileID: 23016750735789410}
   m_Layer: 0
   m_Name: tri-00
   m_TagString: Untagged
@@ -18,13 +18,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4791103686825874
+--- !u!4 &4797101760591473
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1982769254105663}
+  m_GameObject: {fileID: 1398829328404361}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
@@ -33,21 +33,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: -0, z: 0}
---- !u!33 &33118937587827829
+--- !u!33 &33242661050362540
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1982769254105663}
-  m_Mesh: {fileID: 4300000, guid: 865ac92817f6d2345afdfabb7971370d, type: 2}
---- !u!23 &23375517515494349
+  m_GameObject: {fileID: 1398829328404361}
+  m_Mesh: {fileID: 4300000, guid: 42ebad658336c2b4a82654ef49e3fd8d, type: 2}
+--- !u!23 &23016750735789410
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1982769254105663}
+  m_GameObject: {fileID: 1398829328404361}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1

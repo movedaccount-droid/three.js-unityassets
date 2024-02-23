@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1531411597456568
+--- !u!1 &1254694790852589
 GameObject:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Component:
-  - component: {fileID: 4782948370290076}
-  - component: {fileID: 33847384542592871}
-  - component: {fileID: 23511580113455717}
+  - component: {fileID: 4138181423548618}
+  - component: {fileID: 33061929539775117}
+  - component: {fileID: 23999919042871811}
   m_Layer: 0
   m_Name: tri-z-2
   m_TagString: Untagged
@@ -18,13 +18,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4782948370290076
+--- !u!4 &4138181423548618
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1531411597456568}
+  m_GameObject: {fileID: 1254694790852589}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
@@ -33,21 +33,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: -0, z: 0}
---- !u!33 &33847384542592871
+--- !u!33 &33061929539775117
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1531411597456568}
-  m_Mesh: {fileID: 4300000, guid: 33d55fd1e279bbf4aae73a99b40cf980, type: 2}
---- !u!23 &23511580113455717
+  m_GameObject: {fileID: 1254694790852589}
+  m_Mesh: {fileID: 4300000, guid: 5699a68861906f54daec1c356633d9e2, type: 2}
+--- !u!23 &23999919042871811
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1531411597456568}
+  m_GameObject: {fileID: 1254694790852589}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1

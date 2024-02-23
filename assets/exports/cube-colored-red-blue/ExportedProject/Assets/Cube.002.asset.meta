@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b5f6bb285fbe0d448ad6aea9b5a2fd9c
+guid: 8bb4f0fb5058d3e44800a6363d996e69
 timeCreated: 1708715977
 licenseType: Free
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 4300000
   userData:
-  assetBundleName: cube
+  assetBundleName: cube-normal-mapped
   assetBundleVariant:

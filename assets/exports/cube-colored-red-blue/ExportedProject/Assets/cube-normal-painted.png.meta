@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 37dba69f17c443643a4592ab378a73e4
-timeCreated: 1705248807
+guid: f34283148d600e24db43ada70218968d
+timeCreated: 1708715977
 licenseType: Free
 TextureImporter:
   serializedVersion: 12
@@ -9,7 +9,7 @@ TextureImporter:
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
-    sRGBTexture: 1
+    sRGBTexture: 0
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
@@ -32,7 +32,7 @@ TextureImporter:
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
-  textureFormat: 10
+  textureFormat: 12
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
@@ -56,7 +56,7 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 1
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 0
@@ -122,5 +122,5 @@ TextureImporter:
     importInspectorWarnings:
   pSDRemoveMatte: 0
   userData:
-  assetBundleName:
+  assetBundleName: cube-normal-mapped
   assetBundleVariant:

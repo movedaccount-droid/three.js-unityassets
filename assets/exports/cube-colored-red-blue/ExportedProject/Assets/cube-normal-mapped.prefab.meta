@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3edb90d2970605243a278c8d5a95d44e
+guid: 5a2d9bc85470aa24b9e229701166b60a
 timeCreated: 1708715977
 licenseType: Free
 PrefabImporter:
@@ -8,5 +8,5 @@ PrefabImporter:
   isPrefabVariant: 0
   variantParentGUID: 00000000000000000000000000000000
   userData:
-  assetBundleName: tri-y-1-z-2-normaledited
+  assetBundleName: cube-normal-mapped
   assetBundleVariant:
