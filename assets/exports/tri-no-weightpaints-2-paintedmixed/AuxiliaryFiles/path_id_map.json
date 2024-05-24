@@ -1,0 +1,14 @@
+{
+  "Files": [
+    {
+      "Name": "cab-6b5da65cb78f5c4250ac3d11fdbfdaaf",
+      "Assets": [
+        {
+          "PathID": 6725684159885314332,
+          "Name": "Plane",
+          "Type": "Mesh"
+        }
+      ]
+    }
+  ]
+}

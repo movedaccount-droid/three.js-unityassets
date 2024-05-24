@@ -20,14 +20,22 @@
 		camera.position.z = 2;
 		
 	    const color = 0xFFFFFF;
-        const intensity = 1;
+        var intensity = 0.5;
         const light = new THREE.AmbientLight(color, intensity);
+
+        intensity = 1;
+        const dirLight = new THREE.DirectionalLight(color, intensity);
+        dirLight.position.set(0, 10, 10);
+        dirLight.target.position.set(-5, 0, 0);
         
         const scene = new THREE.Scene();
         scene.add(light);
+        scene.add(dirLight);
+        scene.add(dirLight.target);
         var asset
 
         function onLoad(asset) {
+            console.log("asset", asset)
             scene.add(asset)
             const box = new THREE.Box3().setFromObject(asset)
             const objSize = box.getSize(new THREE.Vector3()).length();
@@ -64,7 +72,7 @@
         }
 
         const loader = new UnityYAMLLoader();
-        const assets = [['cat.png','cat.png.meta'],['cat.mat','cat.mat.meta'],['cat.asset','cat.asset.meta']]
+        const assets = [['Material.001.mat','Material.001.mat.meta'],['new_template_cube.asset','new_template_cube.asset.meta'],['new_cube_animated.prefab','new_cube_animated.prefab.meta'],['new_template_cube.png','new_template_cube.png.meta'],['new_cube_animated.controller','new_cube_animated.controller.meta'],['Armature|bounce.anim','Armature|bounce.anim.meta']]
         loader.load(assets, (onload) => onLoad(onload), (onprogress) => {console.log(onprogress)}, (onerror) => {console.log(onerror)})
 
 	}

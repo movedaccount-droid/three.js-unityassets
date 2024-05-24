@@ -1,0 +1,19 @@
+{
+  "Files": [
+    {
+      "Name": "cab-bf54ef621f7c83ac875c22c362ec1753",
+      "Assets": [
+        {
+          "PathID": -8065668947597685266,
+          "Name": "new_template_cube",
+          "Type": "Mesh"
+        },
+        {
+          "PathID": 103702296034800226,
+          "Name": "new_template_cube",
+          "Type": "Texture2D"
+        }
+      ]
+    }
+  ]
+}
